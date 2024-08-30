@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h2 Upload File
+  form(method='POST' action='/upload' enctype='multipart/form-data')
+    input(type='hidden' name='_csrf' value=csrfToken)
+    .form-group
+      label(for='file') Choose file
+      input#file.form-control(type='file', name='file' required)
+    button.btn.btn-primary(type='submit') Upload
